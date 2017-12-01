@@ -9,9 +9,12 @@ use GuzzleHttp\Client;
 class MainController extends Controller {
     public function getPaginatedMangas() {
     	$client = new Client(['base_uri' => 'http://api.ddnsking.com:8080/api/v1/']);
-    	$body = $client->get('mangas')->getBody();
-		$obj = json_decode($body)->data;
-    	return view('index', ['mangas' => $obj]);
+    	// $body = $client->get('mangas')->getBody();
+		// $obj = json_decode($body)->data;
+		$mangas = json_decode($client->get('mangas')->getBody())->mangas->data;
+		$covers = json_decode($client->get('mangas')->getBody())->covers;
+    	return view('index', ['mangas' => $mangas, 'covers' => $covers]);
+    	// echo '<pre>'; print_r(json_decode($client->get('mangas')->getBody())->covers[0]); echo '</pre>';
 	}
 	public function getSpecifiedManga($id) {
     	$client = new Client(['base_uri' => 'http://api.ddnsking.com:8080/api/v1/']);

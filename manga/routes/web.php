@@ -13,3 +13,10 @@
 
 Route::get('/', 'MainController@getPaginatedMangas');
 Route::get('/manga/{id}', 'MainController@getSpecifiedManga');
+Route::get('/upload', function () {
+    return view('upload');
+})->middleware('auth');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

@@ -1,4 +1,5 @@
 <?php
+use Illuminate\Support\Facades\Storage;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,6 +22,9 @@ Route::get('api/v1/manga/{id}/questions', 'ReactionsController@getQuestionsOnMan
 Route::get('api/v1/manga/{id}/answers', 'ReactionsController@getAnswersOnManga');
 Route::get('api/v1/users', 'UsersController@getAllUsers');
 Route::get('api/v1/user/{id}', 'UsersController@getUser');
+Route::get('mail', 'MangasController@mail');
+Route::post('api/v1/manga', 'MangasController@addNewManga');
+Route::get('mail/{mail}, MangasController@mail');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

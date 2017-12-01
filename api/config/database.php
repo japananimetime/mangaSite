@@ -77,6 +77,17 @@ return [
             'charset' => 'utf8',
             'prefix' => '',
         ],
+        'mongodb' => [
+            'driver'   => 'mongodb',
+            'host'     => '127.0.0.1',
+            'port'     => '27017',
+            'database' => 'test',
+            // 'username' => 'admin_name',
+            // 'password' => '1234',
+            'options'  => [
+            'database' => 'admin' // sets the authentication database required by mongo 3
+        ],
+],
 
     ],
 

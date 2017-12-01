@@ -162,7 +162,10 @@ return [
         Illuminate\Session\SessionServiceProvider::class,
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
+        Jenssegers\Mongodb\MongodbServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
+        Mookofe\Tail\ServiceProvider::class,
+
 
         /*
          * Package Service Providers...
@@ -225,6 +228,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+        'Tail' => Mookofe\Tail\Facades\Tail::class,
 
     ],
 
